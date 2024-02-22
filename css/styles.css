@@ -8,9 +8,13 @@
     src: url(../src/fonts/Inferi.ttf);
 }
 
+:root {
+    --bg: #fff;
+}
+
 html, body {
-    background: #f9f9f9;
-    color: #222;
+    background: var(--bg);
+    color: #000;
     overflow: hidden;
     font-family: "Dia";
     cursor: none;
@@ -94,13 +98,12 @@ a:hover {
     transform: translate(-50%, 50%);
     animation: title-end 1s forwards cubic-bezier(0.79,0.14,0.15,0.86) 2.5s;
     transition: all 1s;
-    z-index: -1;
+    z-index: 1;
 }
 
 @keyframes title-end {
     100% {
-        bottom: -6vw;
-        transform: translate(-50%, 0);
+        bottom: 12vw;
     }
 }
 
@@ -135,13 +138,13 @@ a:hover {
 #title-cover {
     height: 5vw;
     width: 25vw;
-    background: #f9f9f9;
+    background: var(--bg);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     margin-top: 5vw;
-    z-index: 0;
+    z-index: 2;
     animation: disappear 0.1s forwards 1s;
 }
 
@@ -189,7 +192,7 @@ body:has(#imgs:hover, a:hover) #cursor {
     height: 0;
     object-fit: cover;
     position: absolute;
-    top: 6vw;
+    top: 12vh;
     transform: translateX(-50%);
     transition: all 0.8s;
 }
@@ -204,14 +207,21 @@ body:has(#imgs:hover, a:hover) #cursor {
 
 #img-2 {
     width: 0;
-    height: 28vw;
     object-fit: cover;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    animation: size 1s forwards cubic-bezier(0.79,0.14,0.15,0.86) 1.1s, size-2 1s forwards cubic-bezier(0.79,0.14,0.15,0.86) 2.5s;
     transition: all 0.8s;
+    animation: size 1s forwards cubic-bezier(0.79,0.14,0.15,0.86) 1.1s, size-2 1s forwards cubic-bezier(0.79,0.14,0.15,0.86) 2.5s;
+}
+
+.size1 {
+    height: 50vh;
+}
+
+.size2 {
+    height: 25vh;
 }
 
 #img-3 {
@@ -234,8 +244,8 @@ body:has(#imgs:hover, a:hover) #cursor {
 @keyframes size-2 {
     100% {
         width: 25vw;
-        transform: translateX(-50%);
-        top: 6vw;
+        top: 12vh;
+        transform: translate(-50%, 0);
     }
 }
 
@@ -256,24 +266,24 @@ body:has(#imgs:hover, a:hover) #cursor {
 #info {
     font-size: 6vw;
     position: absolute;
-    top: 12vw;
+    top: 15vw;
     left: 32vw;
 }
 
 #info-cover {
     width: 100vw;
     height: 7vw;
-    background: #f9f9f9;
+    background: var(--bg);
     opacity: 0;
     position: absolute;
-    top: 12vw;
+    top: 15vw;
     left: 32vw;
 }
 
 #long-info {
     font-size: 1.5vw;
     position: absolute;
-    top: 20vw;
+    top: 25vw;
     left: 32.4vw;
     width: 50vw;
     opacity: 0;

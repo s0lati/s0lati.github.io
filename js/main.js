@@ -13,11 +13,17 @@ $("#info-cover").hide();
      }, 75);
 })(8);
 
+if(window.innerWidth / window.innerHeight < 2) { $("#img-2").addClass("size1") } else { $("#img-2").addClass("size2") };
+
+window.onresize = function() {
+     if(window.innerWidth / window.innerHeight < 2) { $("#img-2").removeClass("size2"), $("#img-2").addClass("size1"), $(`#imgs img:not(#img-2)`).css("height", "50vh") } else { $("#img-2").removeClass("size1"), $("#img-2").addClass("size2"), $(`#imgs img:not(#img-2)`).css("height", "25vh") };
+};
+
 setTimeout(() => {
      (function anim2(i) {
           setTimeout(function () {
                if (6 - i == 3) i--;
-               $(`#imgs img:nth-child(${6 - i})`).css("height", "20vw");
+               if(window.innerWidth/window.innerHeight < 2) { $(`#imgs img:nth-child(${6 - i})`).css("height", "50vh") } else { $(`#imgs img:nth-child(${6 - i})`).css("height", "25vh") };
                if (--i) anim2(i);
           }, 250);
      })(6);
@@ -46,7 +52,7 @@ $("img").on("click", function () {
      } else {
           clicked = true;
      }
-     $("#" + this.id).css("height", "40vw");
+     $("#" + this.id).css("height", "83vh");
      $("#" + this.id).css("width", "25vw");
      $("#" + this.id).css("top", "6vw");
      $("#" + this.id).css("left", "17.5vw");
@@ -63,7 +69,7 @@ $("img").on("click", function () {
           $("#info-cover").show();
           $("#info").html(str);
           $("#long-info").html(tech_info[num]);
-          $("#long-info").css("top", "14vw");
+          $("#long-info").css("top", "16vw");
           $("#long-info").css("opacity", 0.9);
           (function anim(i) {
                setTimeout(function () {
