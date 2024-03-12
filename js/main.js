@@ -13,10 +13,10 @@ $("#info-cover").hide();
      }, 75);
 })(8);
 
-if(window.innerWidth / window.innerHeight < 2) { $("#img-2").addClass("size1") } else { $("#img-2").addClass("size2") };
+if(window.innerWidth / window.innerHeight < 2.1) { $("#img-2").addClass("size1") } else { $("#img-2").addClass("size2") };
 
 window.onresize = function() {
-     if(window.innerWidth / window.innerHeight < 2) { $("#img-2").removeClass("size2"), $("#img-2").addClass("size1"), $(`#imgs img:not(#img-2)`).css("height", "50vh") } else { $("#img-2").removeClass("size1"), $("#img-2").addClass("size2"), $(`#imgs img:not(#img-2)`).css("height", "25vh") };
+     if(window.innerWidth / window.innerHeight < 2.1) { $("#img-2").removeClass("size2"), $("#img-2").addClass("size1"), $(`#imgs img:not(#img-2)`).css("height", "50vh") } else { $("#img-2").removeClass("size1"), $("#img-2").addClass("size2"), $(`#imgs img:not(#img-2)`).css("height", "25vh") };
 };
 
 setTimeout(() => {
