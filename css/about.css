@@ -15,7 +15,7 @@
 html, body {
     background: var(--bg);
     color: #000;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: "Dia";
     cursor: none;
 }
